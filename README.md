@@ -1,4 +1,9 @@
 # Chat local LLM
+<div align="center">
+
+https://github.com/user-attachments/assets/2bef5e68-dd70-4aef-b2b6-dda702eea36a
+
+</div>
 
 A one-screen Android chat that runs **Gemma 4 E2B** on the phone with **LiteRT-LM**. The person asks, the model answers, nothing leaves the device.
 
