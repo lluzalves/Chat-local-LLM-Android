@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Chat local LLM</string>
+
+    <string name="status_no_model">No model on this phone</string>
+    <string name="status_not_loaded">Model on this phone, not loaded</string>
+    <string name="status_loading">Loading model…</string>
+    <string name="status_ready">Model ready</string>
+
+    <string name="chat_hint">Ask the model something</string>
+    <string name="chat_send">Send</string>
+    <string name="chat_new">New chat</string>
+    <string name="chat_empty">A fresh conversation. Anything you type stays on this phone.</string>
+    <string name="chat_you">You</string>
+    <string name="chat_model">Model</string>
+    <string name="chat_thinking">thinking…</string>
+    <string name="chat_still_thinking">still thinking…</string>
+</resources>

@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="Theme.ChatLocalLlm" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/deep</item>
+    </style>
+</resources>
