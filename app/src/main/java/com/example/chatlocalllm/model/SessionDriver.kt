@@ -81,6 +81,8 @@ class SessionDriver(
         if (idle?.isActive == true) return
         idle = scope.launch {
             delay(SessionPolicy.IDLE_RELEASE_MS.milliseconds)
+
+            idle = null
             apply(SessionPolicy.Event.Tick(clock()))
         }
     }

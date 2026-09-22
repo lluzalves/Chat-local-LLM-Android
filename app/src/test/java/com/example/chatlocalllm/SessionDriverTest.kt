@@ -195,6 +195,21 @@ class SessionDriverTest {
     }
 
     @Test
+    fun `a tick that reads the clock early re-arms the minute instead of dying`() = runTest {
+
+        var offset = 0L
+        val fake = FakeModel("x")
+        val driver = SessionDriver(gateway = MutableStateFlow(fake), scope = backgroundScope, clock = { currentTime + offset })
+        driver.onStop(owner)
+        runCurrent()
+        offset = -1
+        advanceTimeBy(SessionPolicy.IDLE_RELEASE_MS + 1)
+        assertTrue("an early tick must not release", fake.releases.isEmpty())
+        advanceTimeBy(SessionPolicy.IDLE_RELEASE_MS + 1)
+        assertEquals("the re-armed minute released", 1, fake.releases.size)
+    }
+
+    @Test
     fun `a gateway swapped after the driver was built is the one the next event sees`() = runTest {
         val manager = GatewayManager(NoModel)
         val driver = SessionDriver(gateway = manager.gateway, scope = backgroundScope, clock = { currentTime })
